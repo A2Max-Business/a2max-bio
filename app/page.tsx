@@ -1,28 +1,28 @@
+import { PageContainer } from "@/components/layout/PageContainer";
+import { Header } from "@/components/layout/Header";
+import { HeroSection } from "@/components/brand/HeroSection";
+import { DestinationCard } from "@/components/ui/DestinationCard";
+import { InstitutionalCard } from "@/components/brand/InstitutionalCard";
+import { Footer } from "@/components/layout/Footer";
+import { destinations } from "@/config/destinations";
+
 export default function Home() {
   return (
-    <main
-      style={{
-        minHeight: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        fontFamily: "system-ui, sans-serif",
-        backgroundColor: "#0a0a0a",
-        color: "#fafafa",
-        textAlign: "center",
-        padding: "2rem",
-      }}
-    >
-      <h1 style={{ fontSize: "2rem", fontWeight: 700, marginBottom: "0.5rem" }}>
-        A2Max Bio
-      </h1>
-      <p style={{ fontSize: "1rem", color: "#a1a1aa", marginBottom: "1.5rem" }}>
-        Performance e Inteligência de Negócios
-      </p>
-      <p style={{ fontSize: "0.875rem", color: "#52525b" }}>
-        Fundação técnica em desenvolvimento.
-      </p>
-    </main>
+    <PageContainer>
+      <Header />
+      
+      <HeroSection />
+
+      {/* Destinations List */}
+      <main className="px-6 flex flex-col gap-4 mt-8">
+        {destinations.map((destination) => (
+          <DestinationCard key={destination.id} destination={destination} />
+        ))}
+      </main>
+
+      <InstitutionalCard />
+      
+      <Footer />
+    </PageContainer>
   );
 }

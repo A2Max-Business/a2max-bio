@@ -1,16 +1,29 @@
 import type { Metadata } from "next";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 
+const poppins = Poppins({
+  variable: "--font-poppins",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+});
+
 export const metadata: Metadata = {
-  title: "A2Max Bio | Performance e Inteligência de Negócios",
+  title: "A2Max — Performance e Inteligência de Negócios",
   description:
-    "Social Hub oficial da A2Max — Performance e Inteligência de Negócios.",
+    "Visão de crescimento e evolução empresarial",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <html lang="pt-BR">
-      <body>{children}</body>
+      <body className={`${poppins.variable} font-sans antialiased`}>
+        {children}
+      </body>
     </html>
   );
 }
