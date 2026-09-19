@@ -5,7 +5,7 @@ export function ActionCycle() {
   const letters = ["A", "C", "T", "I", "O", "N"];
   
   return (
-    <div className="flex flex-col items-center justify-center py-16 px-4">
+    <div className="flex flex-col items-center justify-center pt-12 pb-12 px-4">
       {/* Sequence A -> C -> T -> I -> O -> N -> ... */}
       <div className="flex items-center justify-center gap-1.5 sm:gap-3 mb-8 w-full max-w-md" aria-label="Ciclo A.C.T.I.O.N.">
         {letters.map((letter, i) => (

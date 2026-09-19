@@ -22,7 +22,7 @@ export default function ActionPage() {
       <Header variant="back" backHref="/" backLabel="Voltar" />
 
       {/* Hero Section */}
-      <section className="relative w-full min-h-[68vh] flex flex-col justify-end px-6 pb-16 pt-32 overflow-hidden mb-6">
+      <section className="relative w-full min-h-[68vh] flex flex-col justify-end px-6 pb-10 pt-32 overflow-hidden mb-0">
         {/* Background Image reused from index but repositioned with CSS */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -58,7 +58,7 @@ export default function ActionPage() {
       </section>
 
       {/* Phases List */}
-      <main className="relative z-20 px-6 pb-12 flex flex-col w-full">
+      <main className="relative z-20 px-6 pb-4 flex flex-col w-full">
         <div className="relative z-10 flex flex-col">
           {actionPhases.map((phase, index) => (
             <React.Fragment key={phase.id}>
@@ -84,7 +84,7 @@ export default function ActionPage() {
         <DiagnosticCTA />
       </Reveal>
 
-      <div className="px-6 mb-16">
+      <div className="px-6 mb-12">
         <Reveal>
           <InstitutionalCard />
         </Reveal>
