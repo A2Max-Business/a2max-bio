@@ -1,3 +1,4 @@
+import * as React from "react";
 import { Metadata } from "next";
 import Image from "next/image";
 import { PageContainer } from "@/components/layout/PageContainer";
@@ -58,14 +59,19 @@ export default function ActionPage() {
 
       {/* Phases List */}
       <main className="relative z-20 px-6 pb-12 flex flex-col w-full">
-        {/* Vertical subtle connector line behind cards */}
-        <div className="absolute left-[72px] top-8 bottom-8 w-px bg-gradient-to-b from-transparent via-laranja-energia/20 to-transparent z-0" aria-hidden="true" />
-        
-        <div className="relative z-10 flex flex-col gap-6">
+        <div className="relative z-10 flex flex-col">
           {actionPhases.map((phase, index) => (
-            <Reveal key={phase.id} delay={index * 50}>
-              <ActionPhaseCard phase={phase} />
-            </Reveal>
+            <React.Fragment key={phase.id}>
+              {index > 0 && (
+                <div className="flex w-full h-5 sm:h-6" aria-hidden="true">
+                  {/* ml-[47.5px] aligns perfectly with the center of the letter (24px padding + 24px half-width of w-12) */}
+                  <div className="ml-[47.5px] w-px h-full bg-gradient-to-b from-transparent via-laranja-energia/30 to-transparent" />
+                </div>
+              )}
+              <Reveal delay={index * 50}>
+                <ActionPhaseCard phase={phase} />
+              </Reveal>
+            </React.Fragment>
           ))}
         </div>
       </main>
