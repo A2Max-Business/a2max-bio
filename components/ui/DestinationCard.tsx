@@ -11,22 +11,26 @@ export function DestinationCard({ destination }: DestinationCardProps) {
   const IconComponent = Icons[destination.id as keyof typeof Icons] || Icons.document;
   
   const content = (
-    <div className={`flex items-center justify-between p-5 rounded-2xl border ${destination.isComingSoon ? 'border-[#1E2536] bg-[#0F1626]' : 'border-[#1E2536] bg-[#141B2D] hover:border-laranja-energia/50 hover:bg-[#1A2235] transition-all cursor-pointer'}`}>
-      <div className="flex items-center gap-4">
+    <div className={`flex items-center justify-between p-[18px] rounded-2xl border transition-all duration-300 ease-out ${
+      destination.isComingSoon 
+        ? 'border-[#1E2536] bg-[#0F1626]' 
+        : 'border-[#1E2536] bg-[#141B2D] hover:border-laranja-energia/50 hover:bg-[#1A2235] hover:-translate-y-0.5 hover:shadow-lg hover:shadow-black/20 cursor-pointer'
+    }`}>
+      <div className="flex items-center gap-3.5">
         <div className={`flex-shrink-0 ${destination.isComingSoon ? 'text-gray-600' : 'text-laranja-energia'}`}>
-          <IconComponent className="w-8 h-8" />
+          <IconComponent className="w-[28px] h-[28px]" />
         </div>
         <div className="flex flex-col">
           <h3 className={`text-base font-semibold ${destination.isComingSoon ? 'text-gray-500' : 'text-white'}`}>
             {destination.label}
           </h3>
-          <p className={`text-sm mt-1 leading-snug ${destination.isComingSoon ? 'text-gray-600' : 'text-gray-400'}`}>
+          <p className={`text-[13px] mt-0.5 leading-snug ${destination.isComingSoon ? 'text-gray-600' : 'text-gray-400'}`}>
             {destination.description}
           </p>
         </div>
       </div>
       
-      <div className="flex-shrink-0 ml-4">
+      <div className="flex-shrink-0 ml-3">
         {destination.isComingSoon ? (
           <span className="text-[10px] font-bold tracking-wider px-2 py-1 bg-[#1E2536] text-gray-400 rounded-full">
             EM BREVE

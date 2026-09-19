@@ -5,6 +5,7 @@ import { DestinationCard } from "@/components/ui/DestinationCard";
 import { InstitutionalCard } from "@/components/brand/InstitutionalCard";
 import { Footer } from "@/components/layout/Footer";
 import { destinations } from "@/config/destinations";
+import { Reveal } from "@/components/ui/Reveal";
 
 export default function Home() {
   return (
@@ -13,16 +14,22 @@ export default function Home() {
       
       <HeroSection />
 
-      {/* Destinations List */}
-      <main className="px-6 flex flex-col gap-4 mt-8">
-        {destinations.map((destination) => (
-          <DestinationCard key={destination.id} destination={destination} />
+      {/* Destinations List - Spacing adjusted to connect smoothly with Hero */}
+      <main className="px-6 flex flex-col gap-3 mt-1 relative z-20">
+        {destinations.map((destination, index) => (
+          <Reveal key={destination.id} delay={index * 50}>
+            <DestinationCard destination={destination} />
+          </Reveal>
         ))}
       </main>
 
-      <InstitutionalCard />
+      <Reveal>
+        <InstitutionalCard />
+      </Reveal>
       
-      <Footer />
+      <Reveal>
+        <Footer />
+      </Reveal>
     </PageContainer>
   );
 }
