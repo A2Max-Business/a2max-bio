@@ -23,29 +23,32 @@ export function ActionPhaseCard({ phase }: ActionPhaseCardProps) {
   return (
     <Link 
       href={phase.href}
-      className="group relative flex flex-col gap-4 bg-white/5 border border-white/10 rounded-2xl p-6 transition-all hover:bg-white/10 overflow-hidden"
+      className="group relative flex gap-5 bg-white/[0.03] border border-white/10 rounded-2xl p-6 transition-all hover:bg-white/5 hover:border-white/20 hover:shadow-lg hover:shadow-black/20 overflow-hidden"
     >
-      <div className="flex items-start justify-between">
-        <div className="flex items-center gap-4">
-          {/* Big Letter background accent or just big text */}
-          <span className="text-4xl font-bold text-white/20 select-none">
-            {phase.letter}
-          </span>
-          <div className="bg-laranja-energia/10 p-3 rounded-full">
-            {getIconForPhase(phase.slug)}
-          </div>
+      {/* Left Column: Letter + Icon */}
+      <div className="flex flex-col items-center w-12 shrink-0 z-10">
+        <span className="text-[42px] font-bold text-white/60 select-none leading-none mb-4 group-hover:text-white/80 transition-colors">
+          {phase.letter}
+        </span>
+        <div className="bg-azul-noite border border-laranja-energia/30 p-2.5 rounded-full group-hover:border-laranja-energia/60 group-hover:bg-laranja-energia/10 transition-colors">
+          {getIconForPhase(phase.slug)}
         </div>
-        <Icons.chevronRight className="w-5 h-5 text-white/40 group-hover:text-laranja-energia transition-colors mt-2" />
       </div>
       
-      <div>
-        <div className="text-xs font-semibold tracking-wider text-laranja-energia mb-1">
-          {phase.verb}
+      {/* Right Column: Text Content */}
+      <div className="flex-1 flex flex-col pt-1">
+        <div className="flex justify-between items-start w-full mb-1">
+          <div className="text-[11px] font-bold tracking-widest text-laranja-energia uppercase">
+            {phase.verb}
+          </div>
+          <Icons.chevronRight className="w-5 h-5 text-white/30 group-hover:text-laranja-energia group-hover:translate-x-1 transition-all" />
         </div>
-        <h3 className="text-xl font-medium text-white mb-2">
+        
+        <h3 className="text-[22px] font-semibold text-white mb-2 leading-tight group-hover:text-laranja-energia transition-colors">
           {phase.title}
         </h3>
-        <p className="text-sm text-white/70 leading-relaxed">
+        
+        <p className="text-sm text-white/60 leading-relaxed pr-2">
           {phase.description}
         </p>
       </div>
