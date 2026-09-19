@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export function HeroSection() {
   return (
-    <div className="relative w-full flex flex-col overflow-hidden pt-[92px] pb-0 animate-hero-bg min-h-[330px]">
+    <div className="relative w-full flex flex-col overflow-hidden pt-[92px] pb-4 animate-hero-bg">
       {/* Background Image with Object Fit */}
       <div className="absolute inset-0 z-0">
         <Image
