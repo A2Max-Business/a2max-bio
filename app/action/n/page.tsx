@@ -114,7 +114,7 @@ export default function ActionPhaseN() {
               </p>
               
               <div className="flex flex-row items-center justify-center gap-1.5 sm:gap-2.5 flex-wrap">
-                {['A', 'C', 'T', 'I', 'O', 'N'].map((letter, i) => (
+                {['A', 'C', 'T', 'I', 'O', 'N'].map((letter) => (
                   <React.Fragment key={letter}>
                     <span className="text-[20px] sm:text-[24px] font-black text-azul-noite">{letter}</span>
                     <span className="text-laranja-energia text-[16px] sm:text-[18px]">→</span>
