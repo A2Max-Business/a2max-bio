@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export function HeroSection() {
   return (
-    <div className="relative w-full h-[55vh] min-h-[480px] max-h-[600px] flex flex-col justify-end overflow-hidden pb-8 animate-hero-bg">
+    <div className="relative w-full flex flex-col overflow-hidden pt-[96px] pb-6 animate-hero-bg min-h-[380px]">
       {/* Background Image with Object Fit */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -20,8 +20,8 @@ export function HeroSection() {
       </div>
 
       {/* Content over Hero */}
-      <div className="relative z-10 px-6 mt-auto">
-        <div className="flex justify-end mb-6 animate-hero-microcopy">
+      <div className="relative z-10 px-6">
+        <div className="flex justify-end mb-4 animate-hero-microcopy">
           <div className="text-right flex flex-col items-end">
             <span className="text-[10px] tracking-[0.15em] text-gray-300 font-medium mb-1">ESTRATÉGIA</span>
             <span className="text-[10px] tracking-[0.15em] text-gray-300 font-medium mb-1">DADOS</span>
