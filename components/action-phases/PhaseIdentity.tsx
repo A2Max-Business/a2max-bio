@@ -22,25 +22,25 @@ const getIconForPhase = (slug: string, className: string = "w-8 h-8 text-laranja
 
 export function PhaseIdentity({ letter, title, verb, iconSlug }: PhaseIdentityProps) {
   return (
-    <div className="flex flex-row items-start gap-3 sm:gap-4 pt-4 pb-6 w-full z-10">
+    <div className="flex flex-row items-start gap-4 sm:gap-5 pt-4 pb-5 w-full z-10">
       {/* Huge Letter */}
-      <div className="flex-shrink-0 mt-1">
-        <span className="text-[72px] sm:text-[90px] font-black text-laranja-energia leading-none select-none">
+      <div className="flex-shrink-0 mt-0 sm:mt-1">
+        <span className="text-[64px] sm:text-[80px] font-black text-laranja-energia leading-none select-none tracking-tighter">
           {letter}
         </span>
       </div>
       
       {/* Title, Verb and Icon */}
-      <div className="flex flex-col flex-1 pt-2">
-        <div className="mb-2">
-          {getIconForPhase(iconSlug, "w-8 h-8 sm:w-10 sm:h-10 text-laranja-energia/90")}
+      <div className="flex flex-col flex-1 pt-1.5 sm:pt-2">
+        <div className="mb-1.5 sm:mb-2 opacity-60">
+          {getIconForPhase(iconSlug, "w-5 h-5 sm:w-6 sm:h-6 text-laranja-energia")}
         </div>
         
-        <h1 className="text-[20px] sm:text-[26px] font-bold text-azul-noite leading-tight tracking-tight mb-1">
+        <h1 className="text-[19px] sm:text-[24px] font-bold text-azul-noite leading-[1.1] tracking-tight mb-1">
           {title}
         </h1>
         
-        <div className="text-[11px] sm:text-[13px] font-bold tracking-widest text-laranja-energia uppercase">
+        <div className="text-[10px] sm:text-[12px] font-bold tracking-widest text-laranja-energia uppercase mt-0.5">
           {verb}
         </div>
       </div>

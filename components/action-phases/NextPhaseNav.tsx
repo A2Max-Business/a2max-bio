@@ -10,42 +10,39 @@ interface NextPhaseNavProps {
   nextHref: string;
 }
 
-export function NextPhaseNav({
-  introText,
-  nextLetter,
-  nextTitle,
-  nextVerb,
-  nextHref
-}: NextPhaseNavProps) {
+export function NextPhaseNav({ introText, nextLetter, nextTitle, nextVerb, nextHref }: NextPhaseNavProps) {
   return (
-    <div className="w-full mt-12">
-      <Link 
-        href={nextHref}
-        className="group flex flex-col sm:flex-row sm:items-center sm:justify-between w-full bg-[#FDFCF9] rounded-3xl p-6 sm:p-8 shadow-sm border border-[#E5E2D9] transition-all hover:shadow-md hover:border-laranja-energia/30 focus:outline-none focus:ring-2 focus:ring-laranja-energia focus:ring-offset-4 focus:ring-offset-[#F5F3EC]"
-      >
-        <div className="flex items-center gap-4 sm:gap-6 mb-4 sm:mb-0">
-          <p className="text-[13px] sm:text-[14px] font-medium text-azul-noite/70 max-w-[200px]">
-            {introText}
-          </p>
-          <div className="hidden sm:flex text-laranja-energia/50 group-hover:text-laranja-energia transition-colors group-hover:translate-x-1">
-            <Icons.chevronRight className="w-6 h-6" />
-          </div>
-        </div>
+    <Link 
+      href={nextHref}
+      className="group w-full bg-white rounded-[20px] p-5 sm:p-6 shadow-[0_2px_10px_rgba(0,0,0,0.02)] border border-[#E5E2D9] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-6 transition-colors hover:border-azul-noite/20"
+    >
+      <div className="text-[13px] sm:text-[14px] text-azul-noite/70 font-medium leading-relaxed max-w-[200px]">
+        {introText}
+      </div>
 
-        <div className="flex items-center gap-4">
-          <span className="text-[32px] sm:text-[40px] font-black text-azul-noite group-hover:text-laranja-energia transition-colors leading-none">
+      <div className="flex items-center gap-4 sm:gap-6 w-full sm:w-auto mt-2 sm:mt-0 pt-4 sm:pt-0 border-t border-dashed border-[#E5E2D9] sm:border-none justify-between sm:justify-start">
+        <div className="hidden sm:block">
+          <Icons.arrowRight className="w-5 h-5 text-laranja-energia transition-transform group-hover:translate-x-1" />
+        </div>
+        
+        <div className="flex items-center gap-3">
+          <span className="text-[32px] sm:text-[40px] font-black text-azul-noite leading-none">
             {nextLetter}
           </span>
-          <div className="flex flex-col">
-            <span className="text-[13px] sm:text-[14px] font-bold text-azul-noite/90 leading-tight">
+          <div className="flex flex-col justify-center">
+            <span className="text-[13px] sm:text-[14px] font-bold text-azul-noite leading-tight mb-0.5">
               {nextTitle}
             </span>
-            <span className="text-[10px] sm:text-[11px] font-bold tracking-widest text-laranja-energia uppercase mt-0.5">
+            <span className="text-[9px] sm:text-[10px] font-bold text-laranja-energia uppercase tracking-widest">
               {nextVerb}
             </span>
           </div>
         </div>
-      </Link>
-    </div>
+
+        <div className="ml-auto sm:hidden">
+          <Icons.arrowRight className="w-5 h-5 text-laranja-energia transition-transform group-hover:translate-x-1" />
+        </div>
+      </div>
+    </Link>
   );
 }

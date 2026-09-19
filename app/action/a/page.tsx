@@ -73,7 +73,7 @@ export default function ActionPhaseA() {
           </div>
         </div>
 
-        <div className="w-full max-w-[480px] mx-auto px-6 mt-6 flex flex-col gap-6">
+        <div className="w-full max-w-[480px] mx-auto px-6 mt-5 flex flex-col gap-5 sm:gap-6 pb-8">
           <Reveal delay={0.4}>
             <AnalysisGrid />
           </Reveal>
