@@ -5,14 +5,15 @@ interface PhaseIdentityProps {
   title: string;
   verb: string;
   iconSlug?: string;
+  opticalAdjustClassName?: string;
 }
 
-export function PhaseIdentity({ letter, title, verb }: PhaseIdentityProps) {
+export function PhaseIdentity({ letter, title, verb, opticalAdjustClassName = "" }: PhaseIdentityProps) {
   return (
     <div className="flex flex-row items-center gap-4 sm:gap-5 pt-4 pb-5 w-full z-10">
       {/* Huge Letter */}
-      <div className="flex-shrink-0">
-        <span className="text-[76px] sm:text-[96px] font-black text-laranja-energia leading-none select-none tracking-tighter">
+      <div className={`flex-shrink-0 flex items-center justify-center ${letter === 'I' ? 'w-[60px] sm:w-[75px]' : ''}`}>
+        <span className={`text-[76px] sm:text-[96px] font-black text-laranja-energia leading-none select-none tracking-tighter ${opticalAdjustClassName}`}>
           {letter}
         </span>
       </div>
